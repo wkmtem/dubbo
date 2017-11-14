@@ -1,0 +1,82 @@
+构建dubbo-2.5.7
+1、导入dubbo编译依赖(hessian-lite、opensesame)至IDEA
+2、安装hessian-lite、opensesame到本地仓库：MavenProjects-Lifecycle-install-run 'xxx[install]'
+3、下载dubbo-2.5.7版本核心框架源码，选择全部子工程导入至IDEA
+4、使用maven对dubbo-parent进行打包：
+    1、MavenProjects-Lifecycle-clean-run 'dubbo-parent[clean]'
+    2、闪电图标-Toggle 'Skip Tests' Mode
+    3、MavenProjects-Lifecycle-package-run 'dubbo-parent[package]'
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Reactor Summary:
+    [INFO]
+    [INFO] dubbo-parent ....................................... SUCCESS [  0.083 s]
+    [INFO] Hessian Lite(Alibaba embed version) ................ SUCCESS [  5.245 s]
+    [INFO] dubbo-common ....................................... SUCCESS [  6.494 s]
+    [INFO] dubbo-container .................................... SUCCESS [  0.003 s]
+    [INFO] dubbo-container-api ................................ SUCCESS [  1.021 s]
+    [INFO] dubbo-container-spring ............................. SUCCESS [  1.314 s]
+    [INFO] dubbo-container-jetty .............................. SUCCESS [  1.252 s]
+    [INFO] dubbo-container-log4j .............................. SUCCESS [  1.210 s]
+    [INFO] dubbo-container-logback ............................ SUCCESS [  1.316 s]
+    [INFO] dubbo-remoting ..................................... SUCCESS [  0.003 s]
+    [INFO] dubbo-remoting-api ................................. SUCCESS [  3.585 s]
+    [INFO] dubbo-remoting-netty ............................... SUCCESS [  1.802 s]
+    [INFO] dubbo-remoting-mina ................................ SUCCESS [  1.555 s]
+    [INFO] dubbo-remoting-grizzly ............................. SUCCESS [  0.897 s]
+    [INFO] dubbo-remoting-p2p ................................. SUCCESS [  1.543 s]
+    [INFO] dubbo-remoting-http ................................ SUCCESS [  0.740 s]
+    [INFO] dubbo-remoting-zookeeper ........................... SUCCESS [  1.523 s]
+    [INFO] dubbo-remoting-netty4 .............................. SUCCESS [  1.990 s]
+    [INFO] dubbo-rpc .......................................... SUCCESS [  0.004 s]
+    [INFO] dubbo-rpc-api ...................................... SUCCESS [  2.627 s]
+    [INFO] dubbo-rpc-default .................................. SUCCESS [  2.538 s]
+    [INFO] dubbo-rpc-injvm .................................... SUCCESS [  1.408 s]
+    [INFO] dubbo-rpc-rmi ...................................... SUCCESS [  1.424 s]
+    [INFO] dubbo-rpc-hessian .................................. SUCCESS [  1.443 s]
+    [INFO] dubbo-rpc-http ..................................... SUCCESS [  0.801 s]
+    [INFO] dubbo-rpc-webservice ............................... SUCCESS [  0.958 s]
+    [INFO] dubbo-cluster ...................................... SUCCESS [  4.487 s]
+    [INFO] dubbo-registry ..................................... SUCCESS [  0.003 s]
+    [INFO] dubbo-registry-api ................................. SUCCESS [  2.380 s]
+    [INFO] dubbo-monitor ...................................... SUCCESS [  0.002 s]
+    [INFO] dubbo-monitor-api .................................. SUCCESS [  1.645 s]
+    [INFO] dubbo-filter ....................................... SUCCESS [  0.002 s]
+    [INFO] dubbo-filter-validation ............................ SUCCESS [  0.912 s]
+    [INFO] dubbo-filter-cache ................................. SUCCESS [  0.899 s]
+    [INFO] dubbo-registry-default ............................. SUCCESS [  2.021 s]
+    [INFO] dubbo-monitor-default .............................. SUCCESS [  1.570 s]
+    [INFO] dubbo-registry-multicast ........................... SUCCESS [  1.502 s]
+    [INFO] dubbo-config ....................................... SUCCESS [  0.002 s]
+    [INFO] dubbo-config-api ................................... SUCCESS [  2.846 s]
+    [INFO] dubbo-config-spring ................................ SUCCESS [  2.973 s]
+    [INFO] dubbo-rpc-thrift ................................... SUCCESS [  3.455 s]
+    [INFO] dubbo-rpc-memcached ................................ SUCCESS [  0.731 s]
+    [INFO] dubbo-rpc-redis .................................... SUCCESS [  0.791 s]
+    [INFO] dubbo-registry-zookeeper ........................... SUCCESS [  1.405 s]
+    [INFO] dubbo-registry-redis ............................... SUCCESS [  1.587 s]
+    [INFO] dubbo .............................................. SUCCESS [ 42.262 s]
+    [INFO] dubbo-simple ....................................... SUCCESS [  0.005 s]
+    [INFO] dubbo-registry-simple .............................. SUCCESS [ 23.615 s]
+    [INFO] dubbo-monitor-simple ............................... SUCCESS [  7.874 s]
+    [INFO] dubbo-admin ........................................ SUCCESS [  9.964 s]
+    [INFO] dubbo-demo ......................................... SUCCESS [  0.005 s]
+    [INFO] dubbo-demo-api ..................................... SUCCESS [  0.568 s]
+    [INFO] dubbo-demo-provider ................................ SUCCESS [  3.098 s]
+    [INFO] dubbo-demo-consumer ................................ SUCCESS [  3.477 s]
+    [INFO] dubbo-test ......................................... SUCCESS [  0.002 s]
+    [INFO] dubbo-test-benchmark ............................... SUCCESS [  3.352 s]
+    [INFO] dubbo-test-compatibility ........................... SUCCESS [  0.019 s]
+    [INFO] dubbo-test-integration ............................. SUCCESS [  0.020 s]
+    [INFO] dubbo-test-examples ................................ SUCCESS [  2.440 s]
+    [INFO] ------------------------------------------------------------------------
+    [INFO] BUILD SUCCESS
+    [INFO] ------------------------------------------------------------------------
+    [INFO] Total time: 02:49 min
+    [INFO] Finished at: 2017-11-14T11:23:53+08:00
+    [INFO] Final Memory: 43M/267M
+    [INFO] ------------------------------------------------------------------------
+5、package打包jar文件路径：
+    1、核心包：E:\Project_idea\dubbo-dubbo-2.5.7\dubbo\target下dubbo-2.5.7.jar、dubbo-2.5.7-sources.jar
+    2、管理控制台：E:\Project_idea\dubbo-dubbo-2.5.7\dubbo-admin\target下dubbo-admin-2.5.7.war
+    3、简易监控中心：E:\Project_idea\dubbo-dubbo-2.5.7\dubbo-simple\dubbo-monitor-simple\target下dubbo-monitor-simple-2.5.7-assembly.tar.gz
+    4、简易注册中心：E:\Project_idea\dubbo-dubbo-2.5.7\dubbo-simple\dubbo-registry-simple\target下dubbo-registry-simple-2.5.7-assembly.tar.gz
